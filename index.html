@@ -3,321 +3,386 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gaétan JUNG | Ingénieur QA Connected Products & Essais Terrain</title>
+  <meta name="description" content="Candidature de Gaétan Jung - Ingénieur Essai Terrain Quechua Footwear à Passy.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#020617">
+  <meta property="og:title" content="Du Digital au Produit | Candidature IET Quechua Footwear">
+  <meta property="og:description" content="Présentation pour le poste d'Ingénieur Essai Terrain Quechua Footwear.">
+  <meta property="og:type" content="website">
+  <title>Gaétan Jung | Candidature IET Quechua Footwear</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'outdoor-dark': '#121B16',
-            'outdoor-card': '#1C2620',
-            'outdoor-border': '#2A3830',
-            'amber-trail': '#E06D3B',
-            'amber-hover': '#C85B2A',
-            'alpine-green': '#10B981',
-            'sky-altitude': '#38BDF8',
+            night: '#020617',
+            slateGlow: '#0f172a',
+            mist: '#cbd5e1',
+            ridge: '#0f766e',
+            alpine: '#059669',
+            snow: '#f8fafc'
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body: ['Outfit', 'sans-serif']
+          },
+          boxShadow: {
+            panel: '0 24px 80px rgba(2, 6, 23, 0.45)'
+          },
+          backgroundImage: {
+            grain: 'radial-gradient(circle at top left, rgba(5, 150, 105, 0.15), transparent 28%), radial-gradient(circle at 85% 20%, rgba(15, 118, 110, 0.18), transparent 30%), linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 1))'
           }
         }
       }
-    }
+    };
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link.is-active {
+      color: #ffffff;
+    }
+
+    .nav-link.is-active::after {
+      width: 100%;
+    }
+  </style>
 </head>
-<body class="bg-outdoor-dark text-gray-200 font-sans antialiased selection:bg-amber-trail selection:text-white">
+<body class="bg-night bg-grain font-body text-snow antialiased selection:bg-alpine/30 selection:text-white">
+  <div class="fixed inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.22),transparent_42%),radial-gradient(circle_at_20%_20%,rgba(14,165,233,0.08),transparent_22%)]"></div>
 
-  <!-- NAVBAR -->
-  <nav class="fixed top-0 w-full bg-outdoor-dark/90 backdrop-blur-md border-b border-outdoor-border z-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="font-bold text-xl tracking-wider text-white">GAÉTAN <span class="text-amber-trail">JUNG</span></a>
-      <div class="hidden md:flex space-x-8 text-sm font-medium">
-        <a href="#about" class="hover:text-amber-trail transition-colors">À Propos</a>
-        <a href="#qa-impact" class="hover:text-amber-trail transition-colors">QA Connected Products</a>
-        <a href="#products" class="hover:text-amber-trail transition-colors">Produits</a>
-        <a href="#parcours" class="hover:text-amber-trail transition-colors">Parcours</a>
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-night/80 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Navigation principale">
+      <a href="#top" class="font-display text-sm font-bold uppercase tracking-[0.3em] text-mist transition hover:text-white">Gaétan Jung / IET Quechua</a>
+
+      <button id="menu-toggle" type="button" class="inline-flex items-center justify-center rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:border-alpine hover:bg-white/5 lg:hidden" aria-expanded="false" aria-controls="mobile-menu">
+        Menu
+      </button>
+
+      <div class="hidden items-center gap-8 lg:flex">
+        <a class="nav-link relative text-sm text-mist transition hover:text-white after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-alpine after:transition-all" href="#pivot">Mon Projet</a>
+        <a class="nav-link relative text-sm text-mist transition hover:text-white after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-alpine after:transition-all" href="#bridge">Mon Apport & Automatisation</a>
+        <a class="nav-link relative text-sm text-mist transition hover:text-white after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-alpine after:transition-all" href="#parcours">Parcours</a>
+        <a class="nav-link relative text-sm text-mist transition hover:text-white after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-alpine after:transition-all" href="#terrain">Mes Pratiques & Veille Matos</a>
+        <a class="rounded-full bg-alpine px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-500" href="mailto:gaetan.jung@decathlon.com">Contact</a>
       </div>
-      <a href="#contact" class="px-4 py-2 text-sm font-medium rounded-lg bg-amber-trail text-white hover:bg-amber-hover transition-colors shadow-lg shadow-amber-trail/20">
-        Contact
-      </a>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-white/10 px-4 py-4 lg:hidden">
+      <div class="flex flex-col gap-3">
+        <a class="rounded-2xl px-3 py-2 text-sm text-mist transition hover:bg-white/5 hover:text-white" href="#pivot">Mon Projet</a>
+        <a class="rounded-2xl px-3 py-2 text-sm text-mist transition hover:bg-white/5 hover:text-white" href="#bridge">Mon Apport & Automatisation</a>
+        <a class="rounded-2xl px-3 py-2 text-sm text-mist transition hover:bg-white/5 hover:text-white" href="#parcours">Parcours</a>
+        <a class="rounded-2xl px-3 py-2 text-sm text-mist transition hover:bg-white/5 hover:text-white" href="#terrain">Mes Pratiques & Veille Matos</a>
+        <a class="rounded-2xl bg-alpine px-3 py-2 text-sm font-semibold text-white transition hover:bg-emerald-500" href="mailto:gaetan.jung@decathlon.com">Me contacter</a>
+      </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO SECTION -->
-  <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-    <div class="grid md:grid-cols-12 gap-8 items-center">
-      <div class="md:col-span-8">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-trail/10 border border-amber-trail/30 text-amber-trail text-xs font-semibold uppercase tracking-wider mb-6">
-          <i class="fa-solid fa-mountain"></i> Proximité Produit & Usage Sportif
+  <main id="top">
+    <!-- HERO SECTION -->
+    <section class="mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
+      <div class="reveal space-y-8">
+        <div class="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-mist">
+          <span class="h-2 w-2 rounded-full bg-alpine"></span>
+          Quechua Hiking / Footwear
         </div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          Ingénieur Qualité Logiciel Embarqué <br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-trail via-amber-400 to-sky-altitude">
-            & Connected Products
-          </span>
-        </h1>
-        <p class="mt-6 text-lg text-gray-300 leading-relaxed">
-          Issu du <strong class="text-white">développement logiciel embarqué</strong>, je me suis orienté vers la qualité pour me rapprocher de l'utilisation réelle des produits sportifs. Chez Decathlon, j'assure la fiabilité des équipements physiques connectés en concevant des architectures de tests automatisés, en outillant nos fournisseurs pour une autonomie optimale et en animant la culture qualité du pôle.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <span class="px-3 py-1.5 rounded-md bg-outdoor-card border border-outdoor-border text-xs text-gray-300 flex items-center gap-2">
-            <i class="fa-brands fa-bluetooth text-sky-altitude"></i> Tests BLE & Protocols VTT AE
-          </span>
-          <span class="px-3 py-1.5 rounded-md bg-outdoor-card border border-outdoor-border text-xs text-gray-300 flex items-center gap-2">
-            <i class="fa-solid fa-gears text-amber-trail"></i> Outillage Fournisseurs
-          </span>
-          <span class="px-3 py-1.5 rounded-md bg-outdoor-card border border-outdoor-border text-xs text-gray-300 flex items-center gap-2">
-            <i class="fa-solid fa-newspaper text-alpine-green"></i> Newsletter QA Connected
-          </span>
+
+        <div class="space-y-5">
+          <p class="text-sm font-medium uppercase tracking-[0.28em] text-alpine">Candidature Ingénieur Essai Terrain</p>
+          <h1 class="max-w-4xl font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-7xl">
+            Passer du Digital au Produit Physique.
+          </h1>
+          <p class="max-w-2xl text-lg leading-8 text-mist sm:text-xl">
+            Aujourd'hui Ingénieur Qualité Logiciel Embarqué chez Decathlon, je souhaite effectuer une transition vers le produit en apportant mes compétences en automatisation et en analyse de données.
+          </p>
+          <p class="max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+            Un virage motivé par l'apprentissage par l'action, la recherche d'un impact direct sur les produits physiques et une approche axée sur les usages réels.
+          </p>
         </div>
+
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <a href="#pivot" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">Découvrir ma démarche</a>
+          <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-alpine hover:bg-white/5">Me contacter</a>
+        </div>
+
+        <ul class="grid gap-4 text-sm font-semibold text-white sm:grid-cols-2 lg:grid-cols-4">
+          <li class="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">Compétences en automatisation</li>
+          <li class="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">Culture UX & Personas</li>
+          <li class="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">Google Sheets & Scripts</li>
+          <li class="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">Veille matériel outdoor</li>
+        </ul>
       </div>
-      <div class="md:col-span-4 flex justify-center">
-        <div class="relative w-full max-w-xs bg-gradient-to-b from-amber-trail/20 to-transparent p-1 rounded-2xl border border-outdoor-border">
-          <div class="bg-outdoor-card p-6 rounded-2xl text-center space-y-4 shadow-xl">
-            <div class="w-20 h-20 mx-auto rounded-full bg-amber-trail/20 border border-amber-trail flex items-center justify-center text-amber-trail text-3xl">
-              <i class="fa-solid fa-person-biking"></i>
+
+      <div class="reveal lg:justify-self-end">
+        <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-slateGlow/80 shadow-panel">
+          <div class="relative h-full min-h-[28rem] p-6 sm:p-8">
+            <div class="relative flex min-h-[24rem] flex-col justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.28em] text-emerald-300">Aujourd'hui & Demain</p>
+                <p class="mt-3 max-w-xs text-xl font-semibold leading-relaxed text-white">Fluidifier le travail d'IET grâce à l'automatisation et apprendre l'ingénierie produit terrain.</p>
+              </div>
+
+              <div class="mt-8 grid gap-5 rounded-[1.75rem] border border-white/10 bg-slate-950/65 p-6 backdrop-blur-md">
+                <!-- Ligne 1 -->
+                <div class="flex items-center gap-4">
+                  <span class="shrink-0 text-sm text-mist">Mon métier actuel</span>
+                  <span class="h-px flex-1 border-b border-dashed border-white/20"></span>
+                  <span class="shrink-0 text-right text-sm font-semibold text-white">QA, Automatisation & Data</span>
+                </div>
+                
+                <!-- Ligne 2 -->
+                <div class="flex items-center gap-4">
+                  <span class="shrink-0 text-sm text-mist">Ce que j'apporte</span>
+                  <span class="h-px flex-1 border-b border-dashed border-white/20"></span>
+                  <span class="shrink-0 text-right text-sm font-semibold text-white">Automatisation de tâches</span>
+                </div>
+                
+                <!-- Ligne 3 -->
+                <div class="flex items-baseline gap-4">
+                  <span class="shrink-0 text-sm text-mist">Ce que je viens apprendre</span>
+                  <span class="h-px flex-1 border-b border-dashed border-white/20"></span>
+                  <span class="shrink-0 text-right text-sm font-semibold text-white">Validation émotionnelle & Footwear</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 class="text-white font-bold text-lg">Gaétan Jung</h3>
-              <p class="text-xs text-gray-400">Ingénieur QA Connected Products</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1 : LE PIVOT DIGITAL -> PRODUIT -->
+    <section id="pivot" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="reveal mb-10 max-w-3xl">
+        <p class="text-sm font-medium uppercase tracking-[0.28em] text-alpine">Projet Professionnel</p>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Pourquoi je souhaite pivoter vers l'Essai Terrain.</h2>
+        <p class="mt-5 text-lg leading-8 text-slate-300">
+          En transparence avec mon management actuel chez Decathlon, je cherche à faire une transition du digital vers le produit physique.
+        </p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="font-display text-2xl font-bold text-white">1. Mon profil logiciel</h3>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.22em] text-mist">Logiciel & UX</span>
+          </div>
+          <p class="mt-6 text-sm leading-7 text-slate-300">
+            Mon métier au quotidien tourne autour de l'expérience utilisateur, de la fiabilité des équipements connectés (montres, VTT électriques, tapis de course) et de la mise en place de tests automatisés.
+          </p>
+        </article>
+
+        <article class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="font-display text-2xl font-bold text-white">2. Mon constat</h3>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.22em] text-mist">Expérience Utilisateur</span>
+          </div>
+          <p class="mt-6 text-sm leading-7 text-slate-300">
+            En 1 an et demi d'expérience, j'ai réalisé que j'ai pris bien plus goût à l'expérience client et à la compréhension des besoins des pratiquants qu'à la technique pure.
+          </p>
+        </article>
+
+        <article class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="font-display text-2xl font-bold text-white">3. Mon objectif Quechua</h3>
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.22em] text-mist">Équipe Footwear</span>
+          </div>
+          <p class="mt-6 text-sm leading-7 text-slate-300">
+            Rejoindre l'équipe IET Quechua pour participer à la validation fonctionnelle des produits, apprendre le métier sur le footwear et le produit.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 2 : APPORT DE L'AUTOMATISATION & PÉRIMÈTRE D'EXPERTISE -->
+    <section id="bridge" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="reveal mb-10 max-w-3xl">
+        <p class="text-sm font-medium uppercase tracking-[0.28em] text-alpine">Compétences & Apprentissage</p>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Ce que j'apporte et ce que j'ai hâte d'apprendre.</h2>
+      </div>
+
+      <!-- APPORT & APPRENTISSAGE -->
+      <div class="grid gap-6 lg:grid-cols-2">
+        <article class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+          <p class="text-xs uppercase tracking-[0.28em] text-emerald-300">Ce que j'apporte à l'équipe</p>
+          <h3 class="mt-4 text-2xl font-semibold text-white">Automatisation & Fluidification des analyses</h3>
+          <p class="mt-4 leading-8 text-slate-300">
+            Mon quotidien étant très axé sur l'automatisation, je suis convaincu d'avoir des choses concrètes à apporter pour fluidifier le travail d'IET. Développement d'outils sur-mesure pour rationaliser les flux QA : <strong>génération automatique de plans de test</strong>, création automatisée de <strong>rapports d'exécution</strong>, scripts d'envoi de mails de diffusion et acculturation des équipes via la rédaction de la <strong>Newsletter QA Connected Product</strong>.
+          </p>
+        </article>
+
+        <article class="reveal rounded-[2rem] border border-alpine/30 bg-gradient-to-br from-alpine/15 to-teal-900/20 p-8 shadow-panel">
+          <p class="text-xs uppercase tracking-[0.28em] text-emerald-200">Ce que je souhaite apprendre</p>
+          <h3 class="mt-4 text-2xl font-semibold text-white">Validation émotionnelle & Ingénierie Footwear</h3>
+          <p class="mt-4 leading-8 text-slate-100/90">
+            Je ne maîtrise pas encore la captation des émotions et des ressentis utilisateurs : c'est précisément ce que j'ai hâte d'apprendre à vos côtés. Je souhaite me former aux protocoles de fitting, à l'analyse de la perception et à l'ingénierie spécifique aux chaussures de randonnée.
+          </p>
+        </article>
+      </div>
+
+      <!-- FOCUS PRODUITS ET EXPERTISES -->
+      <div class="reveal mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Mon & VTT Électrique</p>
+          <h4 class="mt-2 text-lg font-bold text-white">Écrans & Protocols CAN / BLE</h4>
+          <p class="mt-2 text-xs leading-relaxed text-slate-300">Conception et exécution de scripts automatisés ciblant prioritairement la connectivité Bluetooth et les protocoles de communication e-bike.</p>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Outillage Fournisseurs</p>
+          <h4 class="mt-2 text-lg font-bold text-white">Bancs de test dédiés</h4>
+          <p class="mt-2 text-xs leading-relaxed text-slate-300">Mise à disposition d'outils de test aux partenaires industriels pour supprimer les allers-retours fastidieux et réduire les boucles de feedback.</p>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Produits Sportifs</p>
+          <h4 class="mt-2 text-lg font-bold text-white">Montres, Trackers & Tapis</h4>
+          <p class="mt-2 text-xs leading-relaxed text-slate-300">Évaluation et fiabilisation des capteurs, modules IoT géoloc et consoles de fitness soumis à des contraintes d'usage intenses.</p>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Culture Qualité</p>
+          <h4 class="mt-2 text-lg font-bold text-white">Newsletter & Animation</h4>
+          <p class="mt-2 text-xs leading-relaxed text-slate-300">Partage régulier d'indicateurs qualité, de retours d'expérience et acculturation des équipes produit aux enjeux logiciels et physiques.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 : PARCOURS (TIMELINE UNIFIÉE) -->
+    <section id="parcours" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="reveal mb-12 max-w-3xl">
+        <p class="text-sm font-medium uppercase tracking-[0.28em] text-alpine">Expériences & Évolution</p>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Mon Parcours Professionnel.</h2>
+        <p class="mt-4 text-base text-slate-300">
+          Du développement logiciel embarqué en start-up à la qualité produit chez Decathlon, vers l'ingénierie d'essai terrain.
+        </p>
+      </div>
+
+      <div class="relative border-l border-white/15 pl-6 sm:pl-10 ml-2 sm:ml-4 space-y-12">
+        <!-- POSTE 1 -->
+        <div class="reveal relative">
+          <!-- Dot sur la timeline -->
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 h-4 w-4 rounded-full border-2 border-alpine bg-night"></div>
+          
+          <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="rounded-full border border-alpine/30 bg-alpine/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-300">Poste Actuel</span>
+              <span class="text-xs font-medium text-mist">Depuis fin 2024</span>
             </div>
-            <div class="pt-2 border-t border-outdoor-border text-xs text-gray-300 text-left space-y-2">
-              <p><i class="fa-solid fa-microchip text-amber-trail mr-2"></i> Soft/Hard Embedded QA</p>
-              <p><i class="fa-solid fa-bolt text-amber-trail mr-2"></i> Réduction des boucles de feedback</p>
-              <p><i class="fa-solid fa-compass text-amber-trail mr-2"></i> Trajectoire : Essais Terrain</p>
+            <h3 class="mt-4 text-xl sm:text-2xl font-bold text-white">Ingénieur QA Connected Products</h3>
+            <p class="text-sm font-medium text-alpine">Decathlon</p>
+            <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-300 list-disc list-inside">
+              <li>Conception et exécution d'architectures de tests automatisés pour produits connectés (montres, VTT électriques, tapis de course, etc.).</li>
+              <li>Outillage et autonomisation des fournisseurs avec mise à disposition de bancs de test dédiés pour accélérer la validation.</li>
+              <li>Développement de scripts d'automatisation des flux : plans de test, rapports d'exécution et diffusion.</li>
+              <li>Animation de la culture qualité et rédaction de la Newsletter QA Connected.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- POSTE 2 -->
+        <div class="reveal relative">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 h-4 w-4 rounded-full border-2 border-white/30 bg-night"></div>
+          
+          <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-mist">Expérience Précédente</span>
+              <span class="text-xs font-medium text-mist">Start-up</span>
+            </div>
+            <h3 class="mt-4 text-xl sm:text-2xl font-bold text-white">Développeur Logiciel Embarqué</h3>
+            <p class="text-sm font-medium text-mist">Start-up Tech</p>
+            <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-300 list-disc list-inside">
+              <li>Développement de prototypes, Proof of Concept (PoC) et briques logicielles embarquées.</li>
+              <li>Gestion de tâches annexes en lien direct avec le client et cadrage des besoins techniques.</li>
+              <li>Participation active au cycle de vie logiciel et aux échanges d'architecture.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 : PRATIQUE ET VEILLE MATOS (MA PRATIQUE PERSO) -->
+    <section id="terrain" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="reveal mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+        <div class="max-w-3xl">
+          <p class="text-sm font-medium uppercase tracking-[0.28em] text-alpine">Mes Pratiques Sportives & Veille Perso</p>
+          <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Ce que j'aime.</h2>
+        </div>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2">
+        <article class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8">
+          <p class="text-xs uppercase tracking-[0.24em] text-emerald-300">Mes activités outdoor</p>
+          <h3 class="mt-2 text-2xl font-semibold text-white">Randonnée en autonomie, Bikepacking & Trail</h3>
+          <p class="mt-4 text-sm leading-7 text-slate-300">
+            Passionné de randonnée, j'aime particulièrement partir plusieurs jours en autonomie (GR20, traversées du Vercors, de la Chartreuse, boucle dans les Pyrénées avec le Vignemale). Je pratique aussi le bikepacking (tour de France de 5 mois) et le trail (notamment la Maxi-Race en relais autour du lac d'Annecy).
+          </p>
+        </article>
+
+        <article class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8">
+          <p class="text-xs uppercase tracking-[0.24em] text-emerald-300">Ma passion pour le matériel</p>
+          <h3 class="mt-2 text-2xl font-semibold text-white">Benchmarking & Veille matos spontanée</h3>
+          <p class="mt-4 text-sm leading-7 text-slate-300">
+            J'adore analyser et benchmarker mon équipement personnel. J'ai une veille technique très naturelle : je passe beaucoup de temps à éplucher les articles, tests et vidéos sur le matériel de bivouac, de vélo et les chaussures de trail et de randonnée.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION RENCONTRE PASSY AVEC PHOTO DU GR20 -->
+    <section class="mx-auto max-w-7xl pb-12 sm:px-6 lg:px-8">
+      <div class="reveal overflow-hidden rounded-[2rem] border border-alpine/20 bg-gradient-to-r from-alpine/15 via-teal-900/20 to-transparent p-8 sm:p-10">
+        <div class="grid gap-8 lg:grid-cols-[1fr_300px] lg:items-center">
+          <div>
+            <p class="text-sm font-medium uppercase tracking-[0.28em] text-emerald-200">Échange à Passy</p>
+            <h2 class="mt-3 font-display text-3xl font-bold text-white">Au Mountain Store du 10 au 12 août.</h2>
+            <p class="mt-4 text-base leading-8 text-slate-100/90">
+              Je serai au Mountain Store de Passy du 10 au 12 août pour réaliser des essais terrain en VTT électrique. Si tu es disponible pour qu'on se prenne un café et qu'on échange sur le poste, ce sera avec grand plaisir !
+            </p>
+            <div class="mt-6">
+              <a href="mailto:gaetan.jung@decathlon.com" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">Proposer un café</a>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PULL-OUT METRICS / OBJECTIFS -->
-  <section class="py-10 bg-outdoor-card/50 border-y border-outdoor-border">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="flex items-start gap-4 p-4 rounded-xl bg-outdoor-card border border-outdoor-border">
-        <div class="p-3 bg-amber-trail/10 text-amber-trail rounded-lg text-xl">
-          <i class="fa-solid fa-gauge-high"></i>
-        </div>
-        <div>
-          <h4 class="text-white font-bold text-sm">Réactivité Immédiate</h4>
-          <p class="text-xs text-gray-400 mt-1">Accélération de la validation dès la livraison d'une nouvelle version de logiciel embarqué.</p>
-        </div>
-      </div>
-      <div class="flex items-start gap-4 p-4 rounded-xl bg-outdoor-card border border-outdoor-border">
-        <div class="p-3 bg-alpine-green/10 text-alpine-green rounded-lg text-xl">
-          <i class="fa-solid fa-handshake-angle"></i>
-        </div>
-        <div>
-          <h4 class="text-white font-bold text-sm">Autonomie Fournisseurs</h4>
-          <p class="text-xs text-gray-400 mt-1">Mise à disposition de bancs de test dédiés pour supprimer les allers-retours fastidieux.</p>
-        </div>
-      </div>
-      <div class="flex items-start gap-4 p-4 rounded-xl bg-outdoor-card border border-outdoor-border">
-        <div class="p-3 bg-sky-altitude/10 text-sky-altitude rounded-lg text-xl">
-          <i class="fa-solid fa-robot"></i>
-        </div>
-        <div>
-          <h4 class="text-white font-bold text-sm">Zéro Tâche Rédictive</h4>
-          <p class="text-xs text-gray-400 mt-1">Remplacement des tests manuels à faible valeur ajoutée par des campagnes automatiques.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION QA CONNECTED PRODUCTS / IMPACT -->
-  <section id="qa-impact" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <h2 class="text-xs font-semibold uppercase tracking-widest text-amber-trail">Missions & Expertises</h2>
-      <p class="text-3xl font-extrabold text-white mt-2">Mon Impact sur la Qualité des Produits Connectés</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- CARTE 1 -->
-      <div class="bg-outdoor-card rounded-2xl p-6 border border-outdoor-border hover:border-amber-trail/50 transition-all group">
-        <div class="w-12 h-12 rounded-xl bg-amber-trail/10 text-amber-trail flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-          <i class="fa-solid fa-vial-circle-check"></i>
-        </div>
-        <h3 class="text-xl font-bold text-white mb-3">Automatisation & Protocoles</h3>
-        <p class="text-sm text-gray-400 leading-relaxed mb-4">
-          Conception et exécution de scripts automatisés ciblant prioritairement la connectivité <strong class="text-gray-200">Bluetooth</strong> et les <strong class="text-gray-200">protocoles de communication spécifiques aux vélos électriques</strong> (écran & contrôleur).
-        </p>
-        <span class="inline-block text-xs text-amber-trail font-medium">Validation Firmware & Connectivité &rarr;</span>
-      </div>
-
-      <!-- CARTE 2 -->
-      <div class="bg-outdoor-card rounded-2xl p-6 border border-outdoor-border hover:border-amber-trail/50 transition-all group">
-        <div class="w-12 h-12 rounded-xl bg-alpine-green/10 text-alpine-green flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-        </div>
-        <h3 class="text-xl font-bold text-white mb-3">Outillage & Automatisation du Quotidien</h3>
-        <p class="text-sm text-gray-400 leading-relaxed mb-4">
-          Développement d'outils sur-mesure pour rationaliser les flux QA : <strong class="text-gray-200">génération automatique de plans de test</strong>, création automatisée de <strong class="text-gray-200">rapports d'exécution</strong> et scripts d'envoi de mails de diffusion.
-        </p>
-        <span class="inline-block text-xs text-alpine-green font-medium">Gain de temps & Fiabilité des données &rarr;</span>
-      </div>
-
-      <!-- CARTE 3 -->
-      <div class="bg-outdoor-card rounded-2xl p-6 border border-outdoor-border hover:border-amber-trail/50 transition-all group">
-        <div class="w-12 h-12 rounded-xl bg-sky-altitude/10 text-sky-altitude flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-          <i class="fa-solid fa-bullhorn"></i>
-        </div>
-        <h3 class="text-xl font-bold text-white mb-3">Communication & Culture QA</h3>
-        <p class="text-sm text-gray-400 leading-relaxed mb-4">
-          Rédaction et diffusion régulière de la <strong class="text-gray-200">Newsletter QA Connected Product</strong>. Partage d'indicateurs de qualité, retours d'expérience et acculturation des équipes produit aux enjeux logiciels embarqués.
-        </p>
-        <span class="inline-block text-xs text-sky-altitude font-medium">Animation de la communauté interne &rarr;</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUITS SUR LESQUELS JE TRAVAILLE -->
-  <section id="products" class="py-20 bg-outdoor-card/30 border-t border-outdoor-border">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <h2 class="text-xs font-semibold uppercase tracking-widest text-amber-trail">Équipements Physiques</h2>
-          <p class="text-3xl font-extrabold text-white mt-2">Périmètre des Produits Sportifs</p>
-        </div>
-        <p class="text-sm text-gray-400 mt-2 md:mt-0 max-w-md">
-          Du composant IoT au produit fini, je couvre un large éventail d'équipements sportifs soumis à des contraintes d'usage intenses.
-        </p>
-      </div>
-
-      <!-- PÉRIMÈTRE ACTUEL -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-        <div class="p-4 rounded-xl bg-outdoor-card border border-outdoor-border flex items-center gap-3">
-          <i class="fa-solid fa-stopwatch text-amber-trail text-2xl"></i>
-          <div>
-            <h4 class="text-sm font-bold text-white">Montres Connectées</h4>
-            <span class="text-[10px] text-gray-400">Bluetooth / Capteurs</span>
-          </div>
-        </div>
-        <div class="p-4 rounded-xl bg-outdoor-card border border-outdoor-border flex items-center gap-3">
-          <i class="fa-solid fa-person-biking text-amber-trail text-2xl"></i>
-          <div>
-            <h4 class="text-sm font-bold text-white">Vélos Électriques</h4>
-            <span class="text-[10px] text-gray-400">Écrans & Protocols CAN</span>
-          </div>
-        </div>
-        <div class="p-4 rounded-xl bg-outdoor-card border border-outdoor-border flex items-center gap-3">
-          <i class="fa-solid fa-location-dot text-amber-trail text-2xl"></i>
-          <div>
-            <h4 class="text-sm font-bold text-white">Modules IoT Géoloc</h4>
-            <span class="text-[10px] text-gray-400">Trackers e-bike</span>
-          </div>
-        </div>
-        <div class="p-4 rounded-xl bg-outdoor-card border border-outdoor-border flex items-center gap-3">
-          <i class="fa-solid fa-person-walking-luggage text-amber-trail text-2xl"></i>
-          <div>
-            <h4 class="text-sm font-bold text-white">Tapis de Course</h4>
-            <span class="text-[10px] text-gray-400">Moteurs & Consoles</span>
-          </div>
-        </div>
-        <div class="p-4 rounded-xl bg-outdoor-card border border-outdoor-border flex items-center gap-3">
-          <i class="fa-solid fa-water text-amber-trail text-2xl"></i>
-          <div>
-            <h4 class="text-sm font-bold text-white">Rameurs</h4>
-            <span class="text-[10px] text-gray-400">Mesure de puissance</span>
-          </div>
-        </div>
-        <div class="p-4 rounded-xl bg-outdoor-card border border-outdoor-border flex items-center gap-3">
-          <i class="fa-solid fa-bicycle text-amber-trail text-2xl"></i>
-          <div>
-            <h4 class="text-sm font-bold text-white">Vélos Elliptiques</h4>
-            <span class="text-[10px] text-gray-400">Résistance & Fitness</span>
-          </div>
-        </div>
-        <div class="p-4 rounded-xl bg-outdoor-card border border-outdoor-border flex items-center gap-3">
-          <i class="fa-solid fa-house-chimney-window text-amber-trail text-2xl"></i>
-          <div>
-            <h4 class="text-sm font-bold text-white">Vélos d'Intérieur</h4>
-            <span class="text-[10px] text-gray-400">Connectivité RPM</span>
-          </div>
-        </div>
-        <div class="p-4 rounded-xl bg-outdoor-card/40 border border-dashed border-outdoor-border flex items-center gap-3">
-          <i class="fa-solid fa-compass-drafting text-sky-altitude text-2xl"></i>
-          <div>
-            <h4 class="text-sm font-bold text-sky-altitude">Nouveaux Projets</h4>
-            <span class="text-[10px] text-gray-400">Compteurs, Radars...</span>
+          <!-- PHOTO UNIQUE : GR20 -->
+          <div class="overflow-hidden rounded-2xl border border-white/10">
+            <img class="h-64 w-full object-cover" src="images/gr20.jpg" alt="Gaétan Jung - Randonnée en autonomie sur le GR20">
           </div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- BADGES PROJETS EN DÉVELOPPEMENT -->
-      <div class="p-4 rounded-xl bg-amber-trail/5 border border-amber-trail/20 flex flex-wrap items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <i class="fa-solid fa-diagram-project text-amber-trail"></i>
-          <span class="text-xs font-semibold text-gray-200">Prochains développements couverts :</span>
-        </div>
-        <div class="flex flex-wrap gap-2 text-xs">
-          <span class="px-2.5 py-1 rounded bg-outdoor-card text-gray-300 border border-outdoor-border">Compteurs Vélo</span>
-          <span class="px-2.5 py-1 rounded bg-outdoor-card text-gray-300 border border-outdoor-border">Radars de sécurité</span>
-          <span class="px-2.5 py-1 rounded bg-outdoor-card text-gray-300 border border-outdoor-border">Home Trainers</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PARCOURS & TRAJECTOIRE (DEV -> QA -> TERRAIN) -->
-  <section id="parcours" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <h2 class="text-xs font-semibold uppercase tracking-widest text-amber-trail">Évolution Professionnelle</h2>
-      <p class="text-3xl font-extrabold text-white mt-2">Du Code Bas-Niveau à l'Usage Terrain</p>
-    </div>
-
-    <div class="relative border-l-2 border-outdoor-border ml-4 sm:ml-32 space-y-12">
-      <!-- ETAPE 1 -->
-      <div class="relative pl-8 group">
-        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-outdoor-card border-2 border-gray-500 group-hover:border-amber-trail transition-colors"></div>
-        <span class="sm:absolute sm:-left-32 sm:top-1 text-xs font-bold text-gray-500 uppercase tracking-wider">Étape 1</span>
-        <h3 class="text-xl font-bold text-white">Développeur Software Embarqué</h3>
-        <p class="text-xs text-amber-trail font-medium mb-2">Expérience Startup & PoC</p>
-        <p class="text-sm text-gray-400 max-w-2xl leading-relaxed">
-          Développement logiciel bas niveau, réalisation de nombreux Proofs of Concept (PoC), gestion de tâches annexes et relation directe avec les clients.
-        </p>
-      </div>
-
-      <!-- ETAPE 2 -->
-      <div class="relative pl-8 group">
-        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-trail border-2 border-amber-trail shadow-lg shadow-amber-trail/50"></div>
-        <span class="sm:absolute sm:-left-32 sm:top-1 text-xs font-bold text-amber-trail uppercase tracking-wider">Poste Actuel</span>
-        <h3 class="text-xl font-bold text-white">Ingénieur QA Connected Products <span class="text-xs text-gray-400 font-normal">(Decathlon)</span></h3>
-        <p class="text-xs text-alpine-green font-medium mb-2">Orienté Usage & Automatisation</p>
-        <p class="text-sm text-gray-400 max-w-2xl leading-relaxed">
-          Transition voulue vers la Qualité pour me rapprocher du produit et de son utilisation. Automatisation globale (Bluetooth, protocoles VTT AE, rapports), outillage pour l'autonomie des fournisseurs et animation du pôle.
-        </p>
-      </div>
-
-      <!-- ETAPE 3 -->
-      <div class="relative pl-8 group">
-        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-altitude border-2 border-sky-altitude"></div>
-        <span class="sm:absolute sm:-left-32 sm:top-1 text-xs font-bold text-sky-altitude uppercase tracking-wider">Objectif</span>
-        <h3 class="text-xl font-bold text-white">Ingénieur Essais Terrain <span class="text-xs text-gray-400 font-normal">(Quechua Footwear)</span></h3>
-        <p class="text-xs text-sky-altitude font-medium mb-2">Validation en Conditions Réelles</p>
-        <p class="text-sm text-gray-400 max-w-2xl leading-relaxed">
-          Mettre ma double culture technique et sensibilité utilisateur au service de la conception de protocoles de tests terrain rigoureux et de l'évaluation sensorielle des équipements outdoor.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER / CONTACT -->
-  <footer id="contact" class="bg-outdoor-card border-t border-outdoor-border py-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+  <footer id="contact" class="border-t border-white/10 bg-slate-950/80">
+    <div class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-10 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
       <div>
-        <h3 class="text-white font-bold text-lg">Gaétan JUNG</h3>
-        <p class="text-xs text-gray-400 mt-1">Ingénieur Qualité Logiciel Embarqué & Connected Products</p>
+        <p class="text-sm font-medium uppercase tracking-[0.28em] text-alpine">Contact</p>
+        <h2 class="mt-3 font-display text-2xl font-bold text-white">Gaétan Jung</h2>
+        <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-400">
+          Disponible par e-mail, en visio ou directement au Mountain Store de Passy du 10 au 12 août.
+        </p>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="mailto:gaetan.jung@decathlon.com" class="px-4 py-2 text-xs font-semibold rounded-lg bg-amber-trail text-white hover:bg-amber-hover transition-colors">
-          <i class="fa-solid fa-envelope mr-2"></i> Me Contacter
-        </a>
+
+      <div class="grid gap-3 text-sm text-slate-300">
+        <a class="transition hover:text-white" href="mailto:gaetan.jung@decathlon.com">Email interne — gaetan.jung@decathlon.com</a>
+        <a class="transition hover:text-white" href="https://github.com/GaetanJD4" target="_blank" rel="noreferrer">GitHub — github.com/GaetanJD4</a>
       </div>
-    </div>
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-outdoor-border text-center text-[11px] text-gray-500">
-      &copy; 2026 Gaétan Jung — Portfolio Ingénieur QA & Essais Terrain
     </div>
   </footer>
 
+  <script src="assets/landing.js"></script>
 </body>
 </html>
